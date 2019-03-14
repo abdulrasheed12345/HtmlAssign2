@@ -1,0 +1,110 @@
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- use for responsiveness -->
+    </head>
+    <body>
+        
+        <header style=" background-color:rgb(66, 16, 41);padding:10px;text-align: center; color:#white;"><b>Register</b> </header><!-- set header  -->
+<!--  set navbar-->
+ <ul style="list-style-type:none; float: right; background-color:lightsalmon;padding:20px;width: 1293px;display: block;  text-decoration: none;">
+       <b>  <!-- items in nav bar -->
+          <li style=" float:left;line-height: 5px ;margin-right: 10px;  
+"><a href="index.html">Home</a></li>
+          <li style="float:left;line-height: 5px ;margin-right: 10px;  "><a href="about.html">About Us</a></li>
+          <li style="float:left;line-height: 5px ;margin-right: 10px; "><a href="register.html">Register</a></li>
+         </b> 
+
+  </ul>
+  <img style="width: 800px;height: 450px;"  src="signup.jpg" alt="desktop" ><!--set image  --!>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><!-- for break line --!>
+  <div style="background-color:salmon;width:400px;height:455px;margin-left:900px;margin-top: -600px"><!--  set the color and other properties for form elements -->
+   <div style="text-align: center" ><label  ><b>Sign Up</b> </label> </div>
+  <!--  use different input types for elements -->
+<!-- we will use form  --!>          
+<form name="RegForm" action="/submit.php" onsubmit="return validate()" method="post" >  
+   <div style="padding:30px"> <input  style=" width:300px ;height:40px;border-radius:20px;text-align: center" name="EMail" type="email" placeholder="Email "  required</div> 
+   <div style="padding:30px"> <input style="  width:300px;height:40px;border-radius:20px ;text-align: center"  type="tel" name="Telephone" placeholder="Phone "> </div>
+   <div style="padding:30px">  <input style="  width:300px;height:40px;border-radius:20px ;text-align: center" name="Password" type="password" placeholder="Password"></div>
+   <div style="padding:30px"> <input style=" width:300px; height:40px;border-radius:20px ;text-align: center" name="rpassword" type="password" placeholder="Confirm Password"></div>
+<div style="padding:30px; width:300px; height:40px;border-radius:20px ;text-align: center"><input  style="border-radius:20px " type="submit" value="submit" name="Submit"> 
+</form>
+<script> 
+// script for validation
+function validate()                                    
+{ // get the value of every element of form
+           
+    var email = document.forms["RegForm"]["EMail"];    
+    var phone = document.forms["RegForm"]["Telephone"];    
+    var password = document.forms["RegForm"]["Password"];
+    var repeatpassword = document.forms["RegForm"]["rpassword"];
+
+  // it will check either email field is empty
+    if (email.value == "")                                   
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+      // it will check either in email field user used @  
+    if (email.value.indexOf("@", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+    // it will check either in email field user used .  
+    if (email.value.indexOf(".", 0) < 0)                 
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+   
+          // it will check either phone field is empty
+    if (phone.value == "")                           
+    { 
+        window.alert("Please enter your telephone number."); 
+        phone.focus(); 
+        return false; 
+    } 
+   
+          // it will check either password field is empty
+    if (password.value == "")                        
+    { 
+        window.alert("Please enter your password"); 
+        password.focus(); 
+        return flase; 
+    } 
+ if (repeatpassword.value == "")                        
+    { 
+        window.alert("Please enter your password"); 
+        password.focus(); 
+        return flase; 
+    } 
+    if (repeatpassword.value == password.value)                        
+    { 
+        window.alert("Please enter same password"); 
+        password.focus(); 
+        return flase; 
+    } 
+   //if every field is filled then return true
+    return true; 
+   
+}
+</script>
+   
+    <div class="w3-container w3-green">
+          
+          </div>
+          
+          <div class="w3-row-padding">
+            <div class="w3-third">
+          
+            </div>
+          
+            <div class="w3-third">
+            </div>
+            <div class="w3-third">      </div></div></div>
+</body>
+</html>
